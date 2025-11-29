@@ -1,0 +1,36 @@
+# Core numerical stack
+numpy>=1.24,<2.2
+pandas==2.2.3
+scikit-learn>=1.6.0,<1.7
+
+# Deep learning / ML
+torch==2.5.1
+gluonts==0.16.2
+numba==0.61.2
+
+# TabPFN client
+tabpfn-client==0.1.10   # adjust if newer release available
+tabpfn-time-series==1.0.7
+
+# Finance / data sources
+yfinance==0.2.48
+
+# Dashboard / UI
+matplotlib==3.9.2
+dash==2.18.2
+plotly==5.24.1
+
+# Utilities
+tqdm==4.66.5
+rich==13.9.4
+omegaconf==2.3.0
+httpx==0.27.2
+sseclient-py==1.8.0
+typing-extensions==4.12.2
+xxhash==3.5.0
+backoff==2.2.1
+password-strength==0.0.3.post2
+
+transformers==4.46.2
+
+

@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  trademaster-app:
+    build: .
+    image: trademaster:latest
+    container_name: trademaster-app
+    ports:
+      - "8050:8050"
+      # - "${DASH_PORT:-8050}:8050"
+    environment:
+      # Add your API keys or secrets here
+      # SEEKINGALPHA_API_KEY: "e7078ec4f4msh4036343a2400913p1e8893jsna60da59b9b83"
+      # TABPFN_TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNTIwMDA5OGUtNzU4ZS00NjIzLTg0YmUtNGU5YWE0MDcwYzQ4IiwiZXhwIjoxNzk0NzMwOTU2fQ.ERsBD4XaziQrK4ZJNbcVqDdOmnTnBpwgO0nrlLN2Sfo"
+      - TABPFN_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNTIwMDA5OGUtNzU4ZS00NjIzLTg0YmUtNGU5YWE0MDcwYzQ4IiwiZXhwIjoxNzk0NzMwOTU2fQ.ERsBD4XaziQrK4ZJNbcVqDdOmnTnBpwgO0nrlLN2Sfo
+    volumes:
+      # Mount TabPFN credentials so CLIENT mode works without interactive login
+      - ~/.tabpfn:/root/.tabpfn
+      # - /Users/Sigrid/.vscode/extensions/ms-python.vscode-pylance-2025.10.2/dist/.cache/local_indices/4fa12ef9254760f6d7592ef6dfc9f771eb823858c6478419608cf3ee77727740/tabpfn.json
+        # Mount your project folder for live code changes
+      - .:/app
+    restart: always
